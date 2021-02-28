@@ -1,0 +1,42 @@
+package caseproblem1;
+import java.util.Scanner;
+import caseproblem1.EventDemo;
+import caseproblem1.Event;
+
+
+public class CarlysEventPriceWithMethods {
+    private static Scanner input = new Scanner(System.in);
+    
+    
+    public static String getNumero_evento(){
+        System.out.println("Cual es el numero de evento?");
+        String Numero_evento = input.nextLine();
+        return Numero_evento;
+    }
+    
+    public static void main(String[] args) {
+       int guests;
+       guests = getNumero_invitados();
+       System.out.println("La cantidad de invitados es " + guests + ".");
+       calcularPrecio_eventos(invitados);
+    }
+    
+    public static int getNumero_invitados(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Ingrese el numero de invitados: ");
+        int numInvitados = input.nextInt();
+        displayMotto();
+        return numInvitados; 
+        
+    }
+   
+    public static void displayEvent(){
+        System.out.println("Carly's makes the food that makes it a party.");
+        
+    }
+    
+    public static void calcularPrecio_eventos(int numInvitados){
+        
+        
+    }
+}
