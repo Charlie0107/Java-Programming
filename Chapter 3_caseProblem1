@@ -10,8 +10,8 @@ public class CarlysEventPriceWithMethods {
     
     public static String getNumero_evento(){
         System.out.println("Cual es el numero de evento?");
-        String Numero_evento = input.nextLine();
-        return Numero_evento;
+        String numero_evento = input.nextLine();
+        return numero_evento;
     }
     
     public static void main(String[] args) {
@@ -25,13 +25,13 @@ public class CarlysEventPriceWithMethods {
         Scanner input = new Scanner(System.in);
         System.out.println("Ingrese el numero de invitados: ");
         int numInvitados = input.nextInt();
-        displayMotto();
+        displayEvent();
         return numInvitados; 
         
     }
    
     public static void displayEvent(){
-        System.out.println("Carly's makes the food that makes it a party.");
+        System.out.println("Fiestaaa");
         
     }
     
@@ -40,3 +40,105 @@ public class CarlysEventPriceWithMethods {
         
     }
 }
+
+
+package caseproblem1;
+import caseproblem1.EventDemo;
+
+class Event{
+    public static double preciopor_invitado = 35.00;
+    public static int cantidad = 50;
+    private String numero_evento;
+    private int invitados;
+    private double precio;
+    
+    public Event(){
+        this("A000",0);
+    }
+    
+    public Event(String num_evento, int invitados){
+       setNumero_evento(num_evento);
+       setInvitados(invitados);
+    }
+
+    public void setNumero_evento(String num_evento){
+        numero_evento = num_evento;
+    }
+
+    public void setInvitados(int numero_invitados){
+        invitados = numero_invitados;
+        precio = invitados*preciopor_invitado;
+    }
+ 
+    public String getNumero_evento(){
+        return numero_evento;
+    }
+
+    public int getNumero_invitados(){
+        return invitados;
+    }
+
+    public double getPrecio(){
+        return precio;
+    }
+}
+
+
+
+package caseproblem1;
+import java.util.Scanner;
+import caseproblem1.Event;
+
+public class EventDemo {
+
+    
+    public static void main(String[] args) {
+        String num_evento;
+        int invitados;
+        
+        Event detalles_evento = new evento();
+        num_evento = getNumero_evento();
+        invitados = getNumero_invitados();
+        
+        Event detalles_evento2 = new evento(numero_evento, invitados);
+        
+        displayDetalles_evento(detalles_evento);
+        displayDetalles_evento(detalles_evento2);
+    }
+    
+    public static String getNumero_evento(){
+        Scanner input = new Scanner (System.in);
+        System.out.println("Ingresa el numero de evento: ");
+        String Numero_evento = input.nextLine();
+        return numero_evento;
+    }
+    
+    public static int getNumero_invitados(){
+        Scanner input = new Scanner(System.in);
+        System.out.println("Ingresa el numero de invitados: ");
+        int numOfGuests = input.nextInt();
+        displayEvent();
+        return Numero_invitados;
+    }  
+    
+    public static void displayEvent(){
+        System.out.println("Fiestaaaaa");
+        
+    }
+        
+    public static void displayDetalles_evento(evento detalles_evento){
+        
+        if (detalles_evento.getNumbero_invitados()>=evento.CUT_OFF_AMOUNT) {
+            System.out.println("Tu fiesta es demasiado grande.");
+        }
+        else {
+        System.out.println("DETALLES DEL EVENTO");
+        System.out.println("El numero del evento es : " + detalles_evento.getNumero_evento());
+        System.out.println("El numero de invitados son: " + detalles_evento.getNumero_invitados());
+        System.out.println("El costo total es: $" + detalles_evento.getPrecio());
+        }
+        
+    }
+          
+}
+
