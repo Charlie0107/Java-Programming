@@ -1,0 +1,51 @@
+public class MyCharacter {
+    
+    private String nombre;
+    private int numero_ojos;
+    private int numero_vidas;
+    
+public void setNombre(String nombre_personaje){
+    nombre = nombre_personaje;
+}
+public String getNombre(){
+    return nombre;
+}
+public void setOjos(int ojos){
+    numero_ojos = ojos;
+}
+public int getOjos(){
+    return numero_ojos;
+}
+public void setVidas(int vida){
+    numero_vidas = vida;
+}
+public int getVidas(){
+    return numero_vidas;
+}
+}
+
+public class TwoCharacters {
+    
+    public static void main(String[] args) {
+        
+        MyCharacter personaje1 = new MyCharacter();
+        
+        personaje1.setNombre("Marcianito");
+        personaje1.setOjos(5);
+        personaje1.setVidas(10);
+        
+        MyCharacter personaje2 = new MyCharacter();
+        
+        personaje2.setNombre("Aliencito");
+        personaje2.setOjos(4);
+        personaje2.setVidas(20);
+        
+        display(personaje1);
+        display(personaje2);
+    }
+    
+    public static void display(MyCharacter personaje){
+        System.out.println(personaje.getNombre() + " tiene " + personaje.getOjos()
+        + " ojos y " + personaje.getVidas() + " vidas " );
+    }
+}
