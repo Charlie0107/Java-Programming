@@ -1,0 +1,141 @@
+import java.util.Scanner;
+
+public class Event {
+
+  public final static double LOWER = 32.00;
+
+  public final static double HIGHER = 35.00;
+
+  public final static int CUTOFF_VALUE = 50;
+
+  public boolean evento_largo;
+
+  private String numero_evento;
+
+  private int numero_invitados;
+
+  private double precio;
+
+  private double preciopor_invitado;
+
+  public evento(String evento, int invitados) {
+
+      numero_evento = evento;
+
+      numero_invitados = invitados;
+
+  }
+
+  public evento() {
+
+      this("A000", 0);
+
+  }
+
+  private Scanner input = new Scanner(System.in);
+  public void setNumero_evento() {
+
+      System.out.print("Ingresa el numero de evento ");
+      numero_evento = input.nextLine();
+
+  }
+
+  public void setInvitados_totales() {
+
+      System.out.print("Ingresa los invitados totales ");
+
+      invitados_totales = input.nextInt();
+
+      if (eventolargo())
+
+          preciopor_invitado = LOWER;
+
+      else
+
+          preciopor_invitado = HIGHER;
+
+      precio = invitados_totales * preciopor_invitado;
+      eventolargo = (invitados_totales >= CUTOFF_VALUE);
+      System.out.println("");
+
+  }
+
+  public boolean isLargeEvent() {
+
+      if (this.getInvitados_totales() > 50)
+          return true;
+      else
+          return false;
+  }
+  public String getNumero_evento() {
+      return numero_evento;
+  }
+  public int getInvitados_totales() {
+      return Invitados_totales;
+  }
+  public double getPrecio() {
+      return precio;
+  }
+
+}
+
+
+
+public class EventDemo {
+
+  public static void main(String[] args) {
+  
+      Event evento1 = new Event();
+      Event evento2 = new Event();
+      Event evento3 = new Event();
+
+      System.out.println("Ingresa los detalles del evento 1");
+
+      evento.setNumero_evento();
+      evento.setInvitados_totales();
+
+      System.out.println("Ingresa los detalles del evento 2");
+
+      evento2.setNumero_evento();
+      evento2.setInvitados_totales();
+
+      System.out.println("Ingresa los detalles del evento 3");
+
+      evento.setNumeroEvento();
+      evento.setInvitados_totales();
+
+      display(evento1)
+      display(evento1)
+      display(evento2)
+
+      System.out.println("El evento mas grande del evento 1 y 2 es :");
+      display(getLargestEvent(evento1, evento2));
+      System.out.println("El evento mas grande del evento 2 y 3 es :");
+      display(getEventolargo(evento2, evento3));
+      System.out.println("El evento mas grande del evento 1 y 3 es :");
+      display(getEventolargo(evento1, evento3);
+
+  }
+
+  public static void display(Evento e) {
+
+      System.out.println("numero_evento: " + e.getNumero_evento());
+      System.out.println("Total invitados: " + e.getInvitados_totales());
+      System.out.println("Precio total: $"
+     + String.format("%.2f", e.getPrecio()));
+      System.out.println("es un evento largo: " + e.es un evento largo());
+      System.out.println("");
+
+  }
+
+  public static Event getEventolargo(Event e1, Event e2) {
+
+      if (e1.getInvitados_totales() > e2.getInvitados_totales())
+
+          return e1;
+      else
+          return e2;
+
+  }
+
+}
